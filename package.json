@@ -1,5 +1,6 @@
 {
   "name": "alura-nextjs-github-actions",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "author": "gabrielsd02 <xgabrields@gmail.com>",
@@ -15,8 +16,9 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "deploy": "yarn build && npx vercel ./out --confirm --no-clipboard",
-    "deploy:prod": "yarn deploy --prod --token=$VERCEL_TOKEN"
+    "deploy:prod": "yarn deploy:staging --prod",
+    "deploy:staging": "yarn build && npx vercel ./out --confirm --no-clipboard --token=$VERCEL_TOKEN",
+    "deploy:preview": "node ./scripts/pullRequestPreview"
   },
   "devDependencies": {
     "eslint": "^9",

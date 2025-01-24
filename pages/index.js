@@ -1,13 +1,13 @@
-import NextLink from 'next/link';
+import Link from 'next/link'
 
 export default function HomeScreen() {
 
     return (
         <div>
             <h1>Home</h1>
-            <NextLink href={'/sobre'}>
-                <a>Ir para a página sobre</a>
-            </NextLink>
+            <Link href={'/sobre'}>
+                Ir para a página sobre
+            </Link>
         </div>
     )
 

@@ -11,8 +11,16 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf out && next export && mv ./out ./build",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "deploy": ""
+  },
+  "devDependencies": {
+    "eslint": "^9",
+    "eslint-config-next": "15.1.6",
+    "eslint-config-prettier": "^10.0.1",
+    "prettier": "^3.4.2"
   }
 }

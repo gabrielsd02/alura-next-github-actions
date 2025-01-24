@@ -9,4 +9,4 @@ console.log("--DEPLOY END--");
 
 console.log("Site preview: " + DEPLOY_URL);
 
-console.log(output)
+console.log(output);

@@ -1,0 +1,18 @@
+name: "CI (Integração Contínua): Primeira Action"
+
+on:
+    push:
+      branches: [main]
+    pull_request:
+      branches: [opened, synchronize]
+
+# Definindo o que queremos executar
+jobs: 
+    exemplo:
+        runs-on: ubuntu-latest
+        steps: 
+            # faz check-out no repositório para que o job possa acessá-lo
+            - uses: actions/checkout@v4        
+
+            - name: Run a one-line script
+              run: echo Hello, world!

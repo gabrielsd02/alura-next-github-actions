@@ -11,11 +11,11 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && powershell Rename-Item -Path out -NewName build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "deploy": "yarn build && npx vercel ./build --confirm --no-clipboard",
+    "deploy": "yarn build && npx vercel ./out --confirm --no-clipboard",
     "deploy:prod": "yarn deploy --prod --token=$VERCEL_TOKEN"
   },
   "devDependencies": {

@@ -20,13 +20,10 @@ const GH_COMMENT = `
 `;
 
 const defaultHeaders = {};
-defaultHeaders["authorization"] = `token ${GITHUB_TOKEN}`;
+defaultHeaders["authorization"] = `Bearer ${GITHUB_TOKEN}`;
 defaultHeaders["accept"] =
-  "application/vnd.github.v3+json; application/vnd.github.antiope-preview+json";
+  "application/vnd.github+json";
 defaultHeaders["content-type"] = "application/json";
-
-console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
-console.log("GITHUB_PR_NUMBER", GITHUB_PR_NUMBER);
 
 fetch(
   `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
@@ -38,7 +35,7 @@ fetch(
     }),
   }
 )
-  .then((response) => {
+  .then(async (response) => {
     if (response.ok) return response.json();
     throw new Error(response.statusText);
   })

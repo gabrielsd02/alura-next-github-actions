@@ -28,7 +28,6 @@ defaultHeaders["content-type"] = "application/json";
 console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
 console.log("GITHUB_PR_NUMBER", GITHUB_PR_NUMBER);
 console.log("GITHUB_TOKEN", GITHUB_TOKEN);
-console.log("GITHUB_OWNER", GITHUB_OWNER);
 
 fetch(
   `https://api.github.com/repos/gabrielsd02/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,

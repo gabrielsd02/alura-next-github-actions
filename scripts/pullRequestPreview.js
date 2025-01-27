@@ -29,6 +29,8 @@ console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
 console.log("GITHUB_PR_NUMBER", GITHUB_PR_NUMBER);
 console.log("GITHUB_TOKEN", GITHUB_TOKEN);
 
+console.log('existe fetch', fetch);
+
 fetch(
   `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
   {
@@ -41,11 +43,12 @@ fetch(
 )
   .then((response) => {
     if (response.ok) return response.json();
+    console.log("erro response:", response.json())
     throw new Error(response.statusText);
   })
   .catch((err) => {
     console.log("[COMMENT_ON_GITHUB: ERROR]");
-    console.log(err);
+    console.log("erro catch",err);
     throw new Error(err);
   })
   .finally(() => {

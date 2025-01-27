@@ -14,7 +14,7 @@ console.log("--DEPLOY END--");
 
 console.log("--GITHUB_COMMENT START--");
 
-const { GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_PR_NUMBER } = process.env;
+const { GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_PR_NUMBER, GITHUB_OWNER } = process.env;
 const GH_COMMENT = `
 - Deploy URL: [${DEPLOY_URL}](${DEPLOY_URL})
 `;
@@ -28,9 +28,10 @@ defaultHeaders["content-type"] = "application/json";
 console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
 console.log("GITHUB_PR_NUMBER", GITHUB_PR_NUMBER);
 console.log("GITHUB_TOKEN", GITHUB_TOKEN);
+console.log("GITHUB_OWNER", GITHUB_OWNER);
 
 fetch(
-  `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
+  `https://api.github.com/repos/gabrielsd02/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
   {
     headers: defaultHeaders,
     method: "POST",

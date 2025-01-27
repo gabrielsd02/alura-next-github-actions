@@ -30,7 +30,7 @@ console.log("GITHUB_PR_NUMBER", GITHUB_PR_NUMBER);
 console.log("GITHUB_TOKEN", GITHUB_TOKEN);
 
 fetch(
-  `https://api.github.com/repos/gabrielsd02/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
+  `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
   {
     headers: defaultHeaders,
     method: "POST",

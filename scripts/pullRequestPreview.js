@@ -27,6 +27,7 @@ defaultHeaders["content-type"] = "application/json";
 
 console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
 console.log("GITHUB_PR_NUMBER", GITHUB_PR_NUMBER);
+console.log("GITHUB_TOKEN", GITHUB_TOKEN);
 
 fetch(
   `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
@@ -44,6 +45,7 @@ fetch(
   })
   .catch((err) => {
     console.log("[COMMENT_ON_GITHUB: ERROR]");
+    console.log(err);
     throw new Error(err);
   })
   .finally(() => {

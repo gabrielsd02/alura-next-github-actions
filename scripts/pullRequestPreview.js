@@ -34,7 +34,9 @@ fetch(
   {
     headers: defaultHeaders,
     method: "POST",
-    body: GH_COMMENT,
+    body: JSON.stringify({
+      body: GH_COMMENT,
+    }),
   }
 )
   .then(async (response) => {

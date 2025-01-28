@@ -25,5 +25,3 @@ jobs:
               uses: cypress-io/github-action@v6
               with:
                 browser: edge
-            - name: Run Test End-to-End Windows
-              run: yarn test:e2e

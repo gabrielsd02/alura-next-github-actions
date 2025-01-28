@@ -29,11 +29,11 @@ jobs:
     test_e2e:
         runs-on: ubuntu-latest
         steps: 
-            - uses: actions/checkout@v4            
+            - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
               with:
-                node-version: 20.9.0
-                cache: 'yarn'
+                node-version: 'latest'
+                cache: 'yarn'                
             - name: Run Installation
               run: yarn install
             - name: Cypress

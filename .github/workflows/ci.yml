@@ -32,10 +32,9 @@ jobs:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
               with:
-                node-version: 'latest'
-                cache: 'yarn'                
-            - name: Run Installation
-              run: yarn install
+                node-version: 20.9.0
+                cache: 'yarn'       
+                cache-dependency-path: yarn.lock
             - name: Cypress
               uses: cypress-io/github-action@v6
               with:

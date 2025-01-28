@@ -26,6 +26,22 @@ jobs:
             # Runs linter command
             - name: Run Linter
               run: yarn lint
+    test_e2e:
+        runs-on: ubuntu-latest
+        steps: 
+            - uses: actions/checkout@v4            
+            - uses: actions/setup-node@v4
+              with:
+                node-version: 20.9.0
+                cache: 'yarn'
+            - name: Run Installation
+              run: yarn install
+            - name: Cypress
+              uses: cypress-io/github-action@v6
+              with:
+                browser: chrome
+            - name: Run Test End-to-End
+              run: yarn test:e2e
     preview:
         runs-on: ubuntu-latest
         steps: 

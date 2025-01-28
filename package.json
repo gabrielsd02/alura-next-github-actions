@@ -18,9 +18,12 @@
     "lint:fix": "next lint --fix",
     "deploy:prod": "yarn deploy:staging --prod",
     "deploy:staging": "yarn build && npx vercel ./out --yes --token=$VERCEL_TOKEN",
-    "deploy:preview": "node ./scripts/pullRequestPreview"
+    "deploy:preview": "node ./scripts/pullRequestPreview",
+    "test:e2e:open": "cypress open",
+    "test:e2e": "cypress run --config-file=cypress.config.js --headless --browser chrome"
   },
   "devDependencies": {
+    "cypress": "^14.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "eslint-config-prettier": "^10.0.1",
